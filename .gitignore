@@ -34,3 +34,6 @@ npm-debug.log*
 # Misc
 .DS_Store
 *.pem
+
+# Storybook build outputs
+/apps/storybook/storybook-static/*
