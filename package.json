@@ -1,16 +1,17 @@
 {
-  "name": "shadcn-mono",
+  "name": "creativelabfront",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
+    "dev:storybook": "turbo dev --filter=storybook",
+    "dev": "turbo dev --filter=web",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@workspace/eslint-config": "workspace:*",
-    "@workspace/typescript-config": "workspace:*",
+    "@creativelabfront/eslint-config": "workspace:*",
+    "@creativelabfront/typescript-config": "workspace:*",
     "prettier": "^3.7.4",
     "turbo": "^2.6.3",
     "typescript": "5.7.3"
