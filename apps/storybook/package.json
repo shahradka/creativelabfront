@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@creativelabfront/tailwind-config": "workspace:*",
     "@tailwindcss/postcss": "^4.1.17",
     "@creativelabfront/eslint-config": "workspace:*",
     "@storybook/addon-actions": "^8.2.6",

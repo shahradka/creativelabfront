@@ -1,1 +1,3 @@
-export { default } from "@creativelabfront/ui/postcss.config";
+import { postcssConfig } from "@creativelabfront/tailwind-config/postcss";
+
+export default postcssConfig;

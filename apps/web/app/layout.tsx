@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google"
 
-import "@creativelabfront/ui/globals.css"
+import "@creativelabfront/tailwind-config"
 import { Providers } from "@/components/providers"
 
 const fontSans = Geist({

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "@creativelabfront/ui/components/button"
-import "@creativelabfront/ui/globals.css"
+import "@creativelabfront/tailwind-config"
 
 const meta: Meta<typeof Button> = {
   component: Button,
