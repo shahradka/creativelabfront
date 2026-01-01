@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+@import '@creativelabfront/tailwind-config';
+
+@layer utilities {
+  .text-display {
+    @apply text-5xl tracking-tight;
+  }
+
+  .text-4xl {
+    @apply text-4xl tracking-tight;
+  }
+
+  .text-3xl {
+    @apply text-3xl tracking-tight;
+  }
+
+  .text-2xl {
+    @apply text-2xl tracking-tight;
+  }
+
+  .text-xl {
+    @apply text-xl tracking-tight;
+  }
+
+  .text-lg {
+    @apply text-lg tracking-normal;
+  }
+
+  .text-base {
+    @apply text-base tracking-normal;
+  }
+
+  .text-sm {
+    @apply text-sm tracking-normal;
+  }
+
+  .text-xs {
+    @apply text-xs tracking-normal;
+  }
+
+  .text-2xs {
+    @apply text-[10px] tracking-normal;
+  }
+
+  .font-thin {
+    @apply font-thin;
+  }
+
+  .font-normal {
+    @apply font-normal;
+  }
+
+  .font-semi-bold {
+    @apply font-semibold;
+  }
+
+  .font-bold {
+    @apply font-bold;
+  }
+  .text-color-primary {
+    @apply text-primary;
+  }
+
+  .text-secondary {
+    @apply text-secondary;
+  }
+
+  .text-muted {
+    @apply text-muted;
+  }
+}
