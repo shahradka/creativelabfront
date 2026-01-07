@@ -4,7 +4,7 @@
 
 @layer components {
   .header {
-    @apply bg-header h-[82px] w-full px-10;
+    @apply bg-header-background text-header-foreground h-[82px] w-full px-10;
   }
   .header .logo-place {
     @apply flex items-center;
@@ -20,5 +20,36 @@
   }
   .header .item:hover {
     @apply bg-primary-foreground;
+  }
+
+  .hero {
+    @apply w-full h-[90vh] bg-border relative flex flex-col py-12;
+  }
+  .hero .wave {
+    @apply absolute bottom-0 overflow-hidden w-full max-w-[1280px];
+  }
+  .hero .content {
+    @apply flex size-full;
+  }
+  .hero .heading {
+    @apply h-full basis-1/2 p-5 flex flex-col gap-10 relative z-1;
+  }
+  .hero .heading .gradient-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @apply bg-gradient-to-r from-hero-gradient-step1 via-hero-gradient-step2 to-hero-gradient-step3;
+  }
+  .hero .heading .gradient-button {
+    @apply bg-gradient-to-tr from-hero-button-gradient-step1 to-hero-button-gradient-step2;
+  }
+  .hero .heading .gradient-button:hover {
+    @apply bg-gradient-to-tl;
+  }
+  .hero .representing {
+    @apply basis-1/2 flex relative z-1 py-10;
+  }
+  .hero .representing img {
+    @apply absolute bottom-8 right-5;
   }
 }

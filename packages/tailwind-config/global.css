@@ -8,15 +8,14 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --background-secondary: oklch(0.4878 0.0454 220.92);
-  --foreground: oklch(0.2703 0.0471 234.32);
+  --background: oklch(0.9751 0.0127 244.25);
+  --foreground: oklch(0% 0 0);
   --card: oklch(0.9751 0.0127 244.25);
   --card-foreground: oklch(14.1% 0.005 285.823);
   --popover: oklch(0.9751 0.0127 244.25);
   --popover-foreground: oklch(14.1% 0.005 285.823);
   --primary: oklch(0.7423 0.124 190.16);
-  --primary-foreground: oklch(0.2703 0.0471 234.32);
+  --primary-foreground: oklch(0.9751 0.0127 244.25);
   --secondary: oklch(96.7% 0.001 286.375);
   --secondary-foreground: oklch(0.3923 0.0574 217.77);
   --muted: oklch(0.7348 0 0);
@@ -29,7 +28,6 @@
   --border-muted: oklch(0.7348 0 0);
   --border-muted-40: oklch(0.7348 0 0/40);
   --border-destructive: oklch(0.5712 0.2219 20.09);
-  --border-destructive-40: oklch(0.5712 0.23 27/40);
   --border-primary: oklch(0.7554 0.1534 231.64);
   --border-primary-40: oklch(0.7554 0.1534 231.64/40);
   --input: oklch(0.2703 0.0471 234.32);
@@ -107,6 +105,8 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
+  --color-border-destructive: var(--border-destructive);
+  --color-border-destructive-40: --alpha(var(--color-border-destructive) / 40%);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-chart-1: var(--chart-1);

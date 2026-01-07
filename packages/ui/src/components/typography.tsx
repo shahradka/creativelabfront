@@ -8,6 +8,8 @@ import type { ElementType, ComponentPropsWithoutRef } from 'react';
  * 6xl: 60 | 7xl: 72 | 8xl: 96 | 9xl: 128
  */
 export const typographyVariants = {
+  '6xl': '6xl',
+  '5xl': '5xl',
   '4xl': '4xl',
   '3xl': '3xl',
   '2xl': '2xl',
@@ -27,7 +29,7 @@ export const typographyWeight = {
 };
 
 export const typographyColor = {
-  primary: 'primary',
+  primary: 'foreground',
   secondary: 'secondary',
   muted: 'muted',
 };

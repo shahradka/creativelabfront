@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '@creativelabfront/ui/components/typography';
-import logoImg from '../../public/images/logo.svg';
+import logoImg from '../assets/images/logo.svg';
 
 export const HeaderBase = ({
   title = '',
