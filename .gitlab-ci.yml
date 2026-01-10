@@ -30,6 +30,3 @@ build:
     # Also tag as latest
     - docker tag $DOCKERHUB_USERNAME/creativelabfront-app:${CI_COMMIT_SHA:0:8} $DOCKERHUB_USERNAME/creativelabfront-app:latest
     - docker push $DOCKERHUB_USERNAME/creativelabfront-app:latest
-
-  only:
-    - tags
