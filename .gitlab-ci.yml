@@ -1,0 +1,33 @@
+variables:
+  DOCKER_TLS_CERTDIR: ''
+  DOCKER_DRIVER: overlay2
+
+stages:
+  - build
+
+services:
+  - name: docker:24.0.5-dind
+    alias: docker
+
+build:
+  stage: build
+  image: docker:24.0.5
+  before_script:
+    - echo "Logging into Docker Hub..."
+    - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+  script:
+    - echo "🚀 Start building Docker image"
+    - echo "Creating .env file"
+    - |
+      cat <<EOF > .env
+      EOF
+
+    # ---- Build & Push to Docker Hub ----
+    - docker build -t $DOCKERHUB_USERNAME/creativelabfront-app:${CI_COMMIT_SHA:0:8} .
+    - docker push $DOCKERHUB_USERNAME/creativelabfront-app:${CI_COMMIT_SHA:0:8}
+    # Also tag as latest
+    - docker tag $DOCKERHUB_USERNAME/creativelabfront-app:${CI_COMMIT_SHA:0:8} $DOCKERHUB_USERNAME/creativelabfront-app:latest
+    - docker push $DOCKERHUB_USERNAME/creativelabfront-app:latest
+
+  only:
+    - tags
