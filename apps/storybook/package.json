@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "storybook dev -p 6006 --ci --host dev.creativelab.top",
+    "dev": "storybook dev -p 6006 --ci --host 0.0.0.0",
     "build": "storybook build --docs",
     "preview-storybook": "serve storybook-static",
     "clean": "rm -rf .turbo node_modules",

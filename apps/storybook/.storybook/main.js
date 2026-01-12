@@ -21,8 +21,11 @@ const config = {
     // customize the Vite config here
     return {
       ...config,
-      host: true,
-      allowedHosts: ['dev.creativelab.top'],
+      server: {
+        ...(config.server || {}),
+        host: true,
+        allowedHosts: ['dev.creativelab.top'],
+      },
       define: { 'process.env': {} },
       resolve: {
         alias: [
