@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FeatureCard } from '@creativelabfront/ui/components/feature-card';
+import { Achievements } from '@creativelabfront/ui-creativelab/components/achievements';
 import '@creativelabfront/ui-creativelab';
 
-const meta: Meta<typeof FeatureCard> = {
-  component: FeatureCard,
+const meta: Meta<typeof Achievements> = {
+  component: Achievements,
   argTypes: {
     type: {},
   },
@@ -11,7 +11,7 @@ const meta: Meta<typeof FeatureCard> = {
 
 export default meta;
 
-type Story = StoryObj<typeof FeatureCard>;
+type Story = StoryObj<typeof Achievements>;
 
 /*
  *👇 Render functions are a framework specific feature to allow you control on how the component renders.
@@ -19,7 +19,7 @@ type Story = StoryObj<typeof FeatureCard>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: () => <FeatureCard number="14+" desc="Years" />,
+  render: () => <Achievements experiences="14+" projects="50+" skills="30+" />,
   name: 'Header',
   args: {},
 };

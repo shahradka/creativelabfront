@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 @import '@creativelabfront/tailwind-config';
-
+@import './utilities-classes.css';
 @layer utilities {
   .text-display {
     @apply text-5xl tracking-tight;
@@ -74,5 +74,16 @@
 
   .text-muted {
     @apply text-muted;
+  }
+
+  .feature-card {
+    @apply flex flex-col items-center gap-10 py-4 px-10 rounded-lg bg-card relative z-1;
+  }
+
+  .feature-card .number {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @apply bg-gradient-to-b from-feature-card-step1 to-feature-card-step2 text-shadow-md;
   }
 }

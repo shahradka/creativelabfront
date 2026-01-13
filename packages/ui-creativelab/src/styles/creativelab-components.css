@@ -52,4 +52,24 @@
   .hero .representing img {
     @apply absolute bottom-8 right-5;
   }
+
+  .feature-badge {
+    @apply relative z-1 w-37 h-13;
+  }
+
+  .feature-badge.highlight-experience::after {
+    content: '';
+    @apply absolute size-40 -inset-4 rounded-2xl bg-gradient-to-tr from-chart-5 z-0
+        to-chart-3 blur-xl opacity-100;
+  }
+  .feature-badge.highlight-projects::after {
+    content: '';
+    @apply absolute size-40 -inset-4 rounded-2xl bg-gradient-to-tr from-chart-3 z-0
+        to-chart-4 blur-xl opacity-100;
+  }
+  .feature-badge.highlight-skills::after {
+    content: '';
+    @apply absolute size-40 -inset-4 rounded-2xl bg-gradient-to-tr from-ring z-0
+        to-chart-3 blur-xl opacity-100;
+  }
 }

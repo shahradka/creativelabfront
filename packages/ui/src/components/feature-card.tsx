@@ -8,9 +8,11 @@ export const FeatureCard = ({
   ...restProps
 }: React.ComponentProps<'div'> & { number: string; desc: string }) => {
   return (
-    <div className={cn('rounded', className)} {...restProps}>
-      <Typography variant="3xl">{number}</Typography>
-      <Typography variant="medium">{number}</Typography>
+    <div className={cn('rounded feature-card', className)} {...restProps}>
+      <Typography variant="5xl" weight="bold" className="number">
+        {number}
+      </Typography>
+      <Typography variant="small">{desc}</Typography>
     </div>
   );
 };
