@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@400;500;600;700&display=swap');
+
 @theme {
   --color-header-background: oklch(0.4878 0.0454 220.92);
   --color-header-foreground: oklch(0.9751 0.0127 244.25);
@@ -7,4 +9,6 @@
 
   --color-hero-button-gradient-step1: #26b8b2;
   --color-hero-button-gradient-step2: #10d3fa;
+
+  --font-lora: Lora;
 }

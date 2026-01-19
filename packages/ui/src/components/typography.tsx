@@ -61,6 +61,7 @@ export function Typography<T extends ElementType = 'span'>({
   return (
     <Component
       className={cn(
+        'font-inter',
         `text-${typographyVariants[variant]}`,
         cn(`font-${typographyWeight[weight]}`),
         cn(`text-${typographyColor[color]}`),
