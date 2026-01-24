@@ -1,11 +1,11 @@
-import WaveTop from '../assets/images/wave-top.svg';
-import waveBottom from '../assets/images/wave-bottom.svg';
+import WaveTop from '../assets/images/wave-top.svg?url';
+import waveBottom from '../assets/images/wave-bottom.svg?url';
 import { SpecialCard } from '@creativelabfront/ui/components/special-card';
 import { Typography } from '@creativelabfront/ui/components/typography';
-import appLogo from '../assets/images/companies/app-logo-circular.svg';
-import codetechLogo from '../assets/images/companies/codetech-logo-circular.svg';
-import tataLogo from '../assets/images/companies/tata-logo-circular.svg';
-import fanpardazLogo from '../assets/images/companies/fanpardaz-logo.circular.svg';
+import appLogo from '../assets/images/companies/app-logo-circular.svg?url';
+import codetechLogo from '../assets/images/companies/codetech-logo-circular.svg?url';
+import tataLogo from '../assets/images/companies/tata-logo-circular.svg?url';
+import fanpardazLogo from '../assets/images/companies/fanpardaz-logo.circular.svg?url';
 
 export const Timeline = () => {
   return (

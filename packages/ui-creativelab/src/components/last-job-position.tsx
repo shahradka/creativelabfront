@@ -1,5 +1,5 @@
 import { Typography } from '@creativelabfront/ui/components/typography';
-import earlenerFlaskCartoons from '../assets/images/earlener-flask-cartoons-big.svg';
+import earlenerFlaskCartoons from '../assets/images/earlener-flask-cartoons-big.svg?url';
 
 export const LastJobPosition = () => {
   return (
