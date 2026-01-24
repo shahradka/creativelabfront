@@ -13,8 +13,8 @@
   "dependencies": {
     "@creativelabfront/ui": "workspace:*",
     "@creativelabfront/ui-creativelab": "workspace:*",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
     "@creativelabfront/eslint-config": "workspace:*",
@@ -26,7 +26,7 @@
     "@storybook/react": "^8.2.6",
     "@storybook/react-vite": "^8.2.6",
     "@tailwindcss/postcss": "^4.1.17",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.3",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.57.0",

@@ -27,14 +27,6 @@ const config = {
         allowedHosts: ['dev.creativelab.top'],
       },
       define: { 'process.env': {} },
-      resolve: {
-        alias: [
-          {
-            find: 'ui',
-            replacement: resolve(__dirname, '../../../packages/ui/'),
-          },
-        ],
-      },
     };
   },
 
