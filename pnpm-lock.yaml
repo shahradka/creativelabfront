@@ -33,10 +33,10 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui-creativelab
       react:
-        specifier: ^19.2.3
+        specifier: ^19.0.0
         version: 19.2.3
       react-dom:
-        specifier: ^19.2.3
+        specifier: ^19.0.0
         version: 19.2.3(react@19.2.3)
     devDependencies:
       '@creativelabfront/eslint-config':
@@ -67,10 +67,10 @@ importers:
         specifier: ^4.1.17
         version: 4.1.17
       '@types/react':
-        specifier: ^19.2.3
+        specifier: ^19.0.0
         version: 19.2.7
       '@types/react-dom':
-        specifier: ^19.2.3
+        specifier: ^19.0.0
         version: 19.2.3(@types/react@19.2.7)
       '@vitejs/plugin-react':
         specifier: ^4.2.1
@@ -221,10 +221,10 @@ importers:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react:
-        specifier: ^19.2.3
+        specifier: ^19.0.0
         version: 19.2.3
       react-dom:
-        specifier: ^19.2.3
+        specifier: ^19.0.0
         version: 19.2.3(react@19.2.3)
       tailwind-merge:
         specifier: ^3.3.1
@@ -252,10 +252,10 @@ importers:
         specifier: ^20.19.9
         version: 20.19.9
       '@types/react':
-        specifier: ^19.2.3
+        specifier: ^19.0.0
         version: 19.2.7
       '@types/react-dom':
-        specifier: ^19.2.3
+        specifier: ^19.0.0
         version: 19.2.3(@types/react@19.2.7)
       eslint:
         specifier: ^9.32.0
@@ -291,10 +291,10 @@ importers:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react:
-        specifier: ^19.2.3
+        specifier: ^19.0.0
         version: 19.2.3
       react-dom:
-        specifier: ^19.2.3
+        specifier: ^19.0.0
         version: 19.2.3(react@19.2.3)
       tailwind-merge:
         specifier: ^3.3.1
@@ -325,10 +325,10 @@ importers:
         specifier: ^20.19.9
         version: 20.19.25
       '@types/react':
-        specifier: ^19.2.3
+        specifier: ^19.0.0
         version: 19.2.7
       '@types/react-dom':
-        specifier: ^19.2.3
+        specifier: ^19.0.0
         version: 19.2.3(@types/react@19.2.7)
       eslint:
         specifier: ^9.32.0
