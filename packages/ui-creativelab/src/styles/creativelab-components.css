@@ -19,7 +19,7 @@
     @apply flex h-full justify-center align-middle items-center cursor-pointer px-4;
   }
   .header .item:hover {
-    @apply bg-primary-foreground;
+    @apply bg-header-foreground;
   }
 
   .hero {

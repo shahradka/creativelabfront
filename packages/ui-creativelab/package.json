@@ -37,6 +37,7 @@
   },
   "exports": {
     ".": "./src/styles/creativelab-components.css",
+    "./constants/*": "./src/constants/*.ts",
     "./postcss.config": "./postcss.config.mjs",
     "./lib/*": "./src/lib/*.ts",
     "./components/*": "./src/components/*.tsx",
