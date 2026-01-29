@@ -1,30 +1,28 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import { Inter, Lora } from 'next/font/google';
 
-import "@creativelabfront/tailwind-config"
-import { Providers } from "@/components/providers"
+import { Providers } from '@/components/providers';
+import '../styles/global.css';
 
-const fontSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
+const fontInter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
 
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+const fontLora = Lora({
+  subsets: ['latin'],
+  variable: '--font-lora',
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
-      >
+      <body className={`${fontLora.variable} ${fontInter.variable} antialiased `}>
         <Providers>{children}</Providers>
       </body>
     </html>
-  )
+  );
 }

@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -12,21 +12,24 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@creativelabfront/ui-creativelab": "workspace:*",
     "@creativelabfront/ui": "workspace:*",
     "lucide-react": "^0.475.0",
     "next": "16.0.10",
     "next-themes": "^0.4.6",
     "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "react-dom": "^19.2.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@creativelabfront/tailwind-config": "workspace:*",
+    "@creativelabfront/eslint-config": "workspace:^",
+    "@creativelabfront/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "^4.1.17",
     "@types/node": "^20.19.25",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "@creativelabfront/eslint-config": "workspace:^",
-    "@creativelabfront/typescript-config": "workspace:*",
     "eslint": "^9.39.1",
     "typescript": "^5.9.3"
   }

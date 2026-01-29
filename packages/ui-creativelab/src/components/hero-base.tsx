@@ -24,9 +24,6 @@ export const HeroBase: React.FC<HeroBaseProps> = ({
 }) => {
   return (
     <section className="hero">
-      <div className="wave">
-        <img src={wave} />
-      </div>
       <div className="content">
         <div className="heading">
           <div className="flex flex-wrap gap-5">
@@ -50,7 +47,7 @@ export const HeroBase: React.FC<HeroBaseProps> = ({
           </Typography>
           {children}
         </div>
-        <div className="representing">{heroImage ?? <img src={earlener} />}</div>
+        <div className="representing">{heroImage ?? <img src={earlener.src} />}</div>
       </div>
     </section>
   );

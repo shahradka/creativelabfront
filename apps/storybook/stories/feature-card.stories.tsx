@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { FeatureCard } from '@creativelabfront/ui/components/feature-card';
 import '@creativelabfront/ui-creativelab';
+import '../global.css';
 
 const meta: Meta<typeof FeatureCard> = {
   component: FeatureCard,

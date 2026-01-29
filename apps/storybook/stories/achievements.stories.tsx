@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Achievements } from '@creativelabfront/ui-creativelab/components/achievements';
 import '@creativelabfront/ui-creativelab';
+import '../global.css';
 
 const meta: Meta<typeof Achievements> = {
   component: Achievements,

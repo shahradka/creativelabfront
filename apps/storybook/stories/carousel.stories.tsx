@@ -9,6 +9,7 @@ import {
 
 import '@creativelabfront/ui';
 import { Card, CardContent } from '@creativelabfront/ui/components/card';
+import '../global.css';
 
 const meta: Meta<typeof Carousel> = {
   component: Carousel,

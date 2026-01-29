@@ -1,13 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@creativelabfront/ui/components/button"
-import "@creativelabfront/tailwind-config"
+import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from '@creativelabfront/ui/components/button';
+import '@creativelabfront/tailwind-config';
+import '../global.css';
 
 const meta: Meta<typeof Button> = {
   component: Button,
   argTypes: {
     type: {
-      control: { type: "radio" },
-      options: ["button", "submit", "reset"],
+      control: { type: 'radio' },
+      options: ['button', 'submit', 'reset'],
     },
   },
 };
@@ -27,16 +28,16 @@ export const Primary: Story = {
       {...props}
       onClick={(): void => {
         // eslint-disable-next-line no-alert -- alert for demo
-        alert("Hello from Turborepo!");
+        alert('Hello from Turborepo!');
       }}
     >
       Hello
     </Button>
   ),
-  name: "Button",
+  name: 'Button',
   args: {
-    children: "Hello",
-    type: "button",
-    variant: "default",
+    children: 'Hello',
+    type: 'button',
+    variant: 'default',
   },
 };

@@ -15,8 +15,13 @@ export const HeaderBase = ({
     <header className="header">
       <div className="container">
         <div className="logo-place">
-          <span>{logo ?? <img src={logoImg} />}</span>
-          <Typography as="span" variant="medium" color="secondary" weight="semiBold">
+          <span>{logo ?? <img src={logoImg.src} />}</span>
+          <Typography
+            className="text-header-foreground"
+            as="span"
+            variant="medium"
+            weight="semiBold"
+          >
             {title}
           </Typography>
         </div>

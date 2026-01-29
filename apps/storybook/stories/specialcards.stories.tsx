@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { SpecialCard } from '@creativelabfront/ui/components/special-card';
 import noImage from '../assets/images/no-image.svg';
 import '@creativelabfront/ui';
+import '../global.css';
 
 const meta: Meta<typeof SpecialCard> = {
   component: SpecialCard,

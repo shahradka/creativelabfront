@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Timeline } from '@creativelabfront/ui-creativelab/components/timeline';
 import '@creativelabfront/ui-creativelab';
+import '../global.css';
 
 const meta: Meta<typeof Timeline> = {
   component: Timeline,

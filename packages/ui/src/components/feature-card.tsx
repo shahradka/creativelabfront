@@ -1,6 +1,6 @@
-import { cn } from '../lib/utils.js';
-import { Card } from './card.js';
-import { Typography } from './typography.js';
+import { cn } from '../lib/utils';
+import { Card } from './card';
+import { Typography } from './typography';
 
 export const FeatureCard = ({
   number,

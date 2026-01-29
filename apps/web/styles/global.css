@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-header-background: oklch(0.55 0.05 215);
+  --color-hero-background: oklch(0.28 0.02 230);
+}
+.dark {
+  --color-header-background: oklch(0.2 0.02 230);
+}
+
+.hero-wave {
+  @apply size-full absolute bg-contain bg-no-repeat bg-bottom! bg-[url('/images/hero-wave-light-background.svg')];
+}
+
+.dark .hero-wave {
+  @apply bg-[url('/images/hero-wave-dark-background.svg')];
+}

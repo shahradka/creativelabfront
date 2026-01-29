@@ -3,6 +3,7 @@ import { Footer } from '@creativelabfront/ui-creativelab/components/footer';
 import { MenuItems } from '@creativelabfront/ui-creativelab/constants/menu-items';
 import '@creativelabfront/ui-creativelab';
 import { Typography } from '@creativelabfront/ui/components/typography';
+import '../global.css';
 
 const meta: Meta<typeof Footer> = {
   component: Footer,

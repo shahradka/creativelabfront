@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { SkillSet } from '@creativelabfront/ui-creativelab/components/skill-set';
 
 import '@creativelabfront/ui-creativelab';
+import '../global.css';
 
 const meta: Meta<typeof SkillSet> = {
   component: SkillSet,

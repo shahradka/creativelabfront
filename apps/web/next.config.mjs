@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ["@creativelabfront/ui"],
-}
+  transpilePackages: ['@creativelabfront/ui-creativelab', '@creativelabfront/ui'],
+};
 
-export default nextConfig
+export default nextConfig;

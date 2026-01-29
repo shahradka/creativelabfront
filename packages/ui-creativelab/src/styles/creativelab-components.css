@@ -4,7 +4,7 @@
 
 @layer components {
   .header {
-    @apply bg-header-background text-header-foreground h-[82px] w-full px-10;
+    @apply border-b border-b-header-border h-[82px] w-full px-10;
   }
   .header .logo-place {
     @apply flex items-center;
@@ -19,15 +19,13 @@
     @apply flex h-full justify-center align-middle items-center cursor-pointer px-4;
   }
   .header .item:hover {
-    @apply bg-header-foreground;
+    @apply bg-header-hover;
   }
 
   .hero {
-    @apply w-full h-[90vh] bg-border relative flex flex-col py-12;
+    @apply size-full flex flex-col py-12;
   }
-  .hero .wave {
-    @apply absolute bottom-0 overflow-hidden w-full max-w-[1280px];
-  }
+
   .hero .content {
     @apply flex size-full;
   }

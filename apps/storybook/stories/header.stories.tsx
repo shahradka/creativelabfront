@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Typography } from '@creativelabfront/ui/components/typography';
 import { HeaderBase } from '@creativelabfront/ui-creativelab/components/header-base';
 import '@creativelabfront/ui-creativelab';
+import '../global.css';
 
 const meta: Meta<typeof HeaderBase> = {
   component: HeaderBase,
@@ -23,22 +24,22 @@ export const Primary: Story = {
   render: () => (
     <HeaderBase title="CreativeLab">
       <a>
-        <Typography variant="small" color="secondary">
+        <Typography className="text-header-foreground" variant="small">
           Current
         </Typography>
       </a>
       <a>
-        <Typography variant="small" color="secondary">
+        <Typography className="text-header-foreground" variant="small">
           Programming
         </Typography>
       </a>
       <a>
-        <Typography variant="small" color="secondary">
+        <Typography className="text-header-foreground" variant="small">
           Designs
         </Typography>
       </a>
       <a>
-        <Typography variant="small" color="secondary">
+        <Typography className="text-header-foreground" variant="small">
           My CV
         </Typography>
       </a>

@@ -1,5 +1,5 @@
 import { Button } from '@creativelabfront/ui/components/button';
-import { cn } from '../lib/utils.js';
+import { cn } from '../lib/utils';
 export const ExploreButton = ({
   className,
   children,

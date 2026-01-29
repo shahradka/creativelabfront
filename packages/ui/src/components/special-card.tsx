@@ -1,6 +1,6 @@
-import { cn } from '../lib/utils.js';
-import { Card, CardContent } from './card.js';
-import { Typography } from './typography.js';
+import { cn } from '../lib/utils';
+import { Card, CardContent } from './card';
+import { Typography } from './typography';
 
 export const SpecialCard = ({
   children,
@@ -18,7 +18,7 @@ export const SpecialCard = ({
   subTitle?: string;
 }) => {
   return (
-    <Card className="pt-0 overflow-hidden shadow-lg bg-background">
+    <Card className="pt-0 overflow-hidden shadow-lg bg-card">
       <div className={cn('h-2 top-0', gradientClassName)} />
       <CardContent className="flex gap-5 flex-col" {...props}>
         <div className="flex gap-2 items-center">
@@ -27,9 +27,7 @@ export const SpecialCard = ({
             <Typography weight="semiBold" className={titleClassName}>
               {title}
             </Typography>
-            <Typography variant="small" color="muted">
-              {subTitle}
-            </Typography>
+            <Typography variant="small">{subTitle}</Typography>
           </div>
         </div>
         {children}

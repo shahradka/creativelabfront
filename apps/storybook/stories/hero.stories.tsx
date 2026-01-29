@@ -5,6 +5,7 @@ import {
   LearnMoreButton,
 } from '@creativelabfront/ui-creativelab/components/hero-buttons';
 import '@creativelabfront/ui-creativelab';
+import '../global.css';
 
 const meta: Meta<typeof HeroBase> = {
   component: HeroBase,

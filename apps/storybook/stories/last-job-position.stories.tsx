@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { LastJobPosition } from '@creativelabfront/ui-creativelab/components/last-job-position';
 import '@creativelabfront/ui-creativelab';
+import '../global.css';
 
 const meta: Meta<typeof LastJobPosition> = {
   component: LastJobPosition,
