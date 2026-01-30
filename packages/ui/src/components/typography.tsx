@@ -29,7 +29,8 @@ export const typographyWeight = {
 };
 
 export const typographyColor = {
-  primary: 'foreground',
+  foreground: 'foreground',
+  primary: 'primary',
   secondary: 'secondary',
   muted: 'muted',
 };
@@ -52,7 +53,7 @@ export function Typography<T extends ElementType = 'span'>({
   as,
   variant = 'medium',
   weight = 'normal',
-  color = 'primary',
+  color = 'foreground',
   className,
   ...props
 }: TypographyProps<T>) {
