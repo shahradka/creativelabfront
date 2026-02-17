@@ -4,7 +4,7 @@
 
 @layer components {
   .header {
-    @apply border-b border-b-header-border h-[82px] w-full px-10;
+    @apply border-b border-b-header-border h-[82px] w-full;
   }
   .header .logo-place {
     @apply flex items-center;

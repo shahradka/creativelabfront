@@ -1,17 +1,13 @@
-import WaveTop from '../assets/images/wave-top.svg?url';
-import waveBottom from '../assets/images/wave-bottom.svg?url';
 import { SpecialCard } from '@creativelabfront/ui/components/special-card';
 import { Typography } from '@creativelabfront/ui/components/typography';
 import appLogo from '../assets/images/companies/app-logo-circular.svg?url';
 import codetechLogo from '../assets/images/companies/codetech-logo-circular.svg?url';
 import tataLogo from '../assets/images/companies/tata-logo-circular.svg?url';
-import fanpardazLogo from '../assets/images/companies/fanpardaz-logo.circular.svg?url';
+import samanepaydarLogo from '../assets/images/companies/samanepaydar-logo.circular.svg?url';
 
 export const Timeline = () => {
   return (
     <div className="size-full relative">
-      <img className="top-0 left-0 absolute" src={WaveTop} />
-      <img className="bottom-0 right-0 absolute" src={waveBottom} />
       <div className="flex flex-col py-60">
         <Typography className="text-center py-5" weight="semiBold">
           Companies I have worked in them
@@ -19,29 +15,29 @@ export const Timeline = () => {
         <div className="grid grid-cols-2 gap-15 px-5">
           <SpecialCard
             gradientClassName="bg-linear-65 from-purple-500 to-pink-500"
-            logo={<img src={appLogo} alt="App Logo" />}
+            logo={<img src={appLogo.src} alt="App Logo" />}
             title="Asan Pardakht Persian (APP)"
             subTitle="Senior Software Engineer"
           />
           <SpecialCard
             gradientClassName="bg-linear-65 from-orange-500 to-sky-500"
             titleClassName="text-orange-500"
-            logo={<img src={codetechLogo} alt="codetech Logo" />}
+            logo={<img src={codetechLogo.src} alt="codetech Logo" />}
             title="CodeTech"
             subTitle="Senior Software Engineer"
           />
           <SpecialCard
             gradientClassName="bg-linear-65 from-teal-300 to-teal-600"
-            titleClassName="text-cyan-500"
-            logo={<img src={tataLogo} alt="tata Logo" />}
+            titleClassName="text-primary"
+            logo={<img src={tataLogo.src} alt="tata Logo" />}
             title="Tata"
             subTitle="Senior Software Engineer"
           />
           <SpecialCard
             gradientClassName="bg-linear-to-r from-cyan-500 to-blue-500"
-            titleClassName="text-sky-500"
-            logo={<img src={fanpardazLogo} alt="fanpardaz Logo" />}
-            title="Fanpardaz"
+            titleClassName="text-secondary"
+            logo={<img src={samanepaydarLogo.src} alt="Samane Paydar Logo" />}
+            title="Samane Paydar"
             subTitle="Fullstack Developer"
           />
         </div>

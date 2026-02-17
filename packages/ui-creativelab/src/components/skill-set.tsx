@@ -1,3 +1,4 @@
+'use client';
 import { Carousel, CarouselContent, CarouselItem } from '@creativelabfront/ui/components/carousel';
 import { Typography } from '@creativelabfront/ui/components/typography';
 import js_url from '../assets/images/skills/js.svg';
@@ -22,7 +23,8 @@ import docker_url from '../assets/images/skills/docker.svg';
 import kuber_url from '../assets/images/skills/kuber.svg';
 import svn_url from '../assets/images/skills/svn.svg';
 import AutoScroll from 'embla-carousel-auto-scroll';
-import { cn } from '../lib/utils.js';
+import { cn } from '../lib/utils';
+import { Card, CardContent } from '@creativelabfront/ui/components/card';
 
 const FrontEnd_Skills = [
   { title: 'JS', imgUrl: js_url },
@@ -57,12 +59,17 @@ const DevOps_Skills = [
 const contentStyle = 'border-none! md:basis-1/2 lg:basis-1/3';
 const skillLogo = 'px-4 py-10';
 
+const cardStyleClass = 'size-35 flex items-center justify-center';
+
 export const SkillSet = () => {
   return (
-    <div className="flex flex-col justify-center">
-      <Typography className="mb-6 text-left" variant="large">
-        My Skill Set
-      </Typography>
+    <div className="flex flex-col justify-center gap-15">
+      <span>
+        <Typography className="mb-2" variant="2xl">
+          Skills
+        </Typography>
+        <Typography variant="small">Technologies I work with</Typography>
+      </span>
       <Carousel
         className="w-full"
         plugins={[AutoScroll({ playOnInit: true, speed: 2, stopOnInteraction: false })]}
@@ -74,9 +81,13 @@ export const SkillSet = () => {
         <CarouselContent>
           {FrontEnd_Skills.map((item) => (
             <CarouselItem key={item.title} className={cn(contentStyle)}>
-              <div className={skillLogo}>
-                <img src={item.imgUrl} alt={item.title} className="h-16 w-16" />
-              </div>
+              <Card className={cardStyleClass}>
+                <CardContent>
+                  <div className={skillLogo}>
+                    <img src={item.imgUrl.src} alt={item.title} className="h-10 w-10" />
+                  </div>
+                </CardContent>
+              </Card>
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -99,9 +110,11 @@ export const SkillSet = () => {
         <CarouselContent>
           {BackEnd_Skills.map((item) => (
             <CarouselItem key={item.title} className={cn(contentStyle)}>
-              <div className={skillLogo}>
-                <img src={item.imgUrl} alt={item.title} className="h-16 w-16" />
-              </div>
+              <Card className={cardStyleClass}>
+                <div className={skillLogo}>
+                  <img src={item.imgUrl.src} alt={item.title} className="h-10 w-10" />
+                </div>
+              </Card>
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -117,9 +130,11 @@ export const SkillSet = () => {
         <CarouselContent>
           {DevOps_Skills.map((item) => (
             <CarouselItem key={item.title} className={contentStyle}>
-              <div className={skillLogo}>
-                <img src={item.imgUrl} alt={item.title} className="h-16 w-16" />
-              </div>
+              <Card className={cardStyleClass}>
+                <div className={skillLogo}>
+                  <img src={item.imgUrl.src} alt={item.title} className="h-10 w-10" />
+                </div>
+              </Card>
             </CarouselItem>
           ))}
         </CarouselContent>

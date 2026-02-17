@@ -5,11 +5,11 @@ import logoImg from '../assets/images/logo.svg';
 export const Footer = ({ children, ...restProps }: React.ComponentProps<'div'>) => {
   const currentYear = useMemo(() => new Date().getFullYear(), []);
   return (
-    <footer className="footer py-32" {...restProps}>
+    <footer className="footer flex flex-col gap-16 pt-32 bg-black" {...restProps}>
       <div className="flex">
         <div className="basis-3/4 flex flex-col">{children}</div>
         <div className="basis-1/4 flex flex-col items-center gap-3">
-          <img src={logoImg} alt="CreativeLab Logo" className="h-40 w-auto" />
+          <img src={logoImg.src} alt="CreativeLab Logo" className="h-40 w-auto" />
           <Typography>CreativeLab</Typography>
         </div>
       </div>

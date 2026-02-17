@@ -1,4 +1,4 @@
-import { permissions } from './permissions.js';
+import { permissions } from './permissions';
 
 export const MenuItems = [
   { id: '1', label: 'Frontend', href: '/frontend', parentId: null, permission: permissions.PUBLIC },

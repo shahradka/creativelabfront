@@ -12,22 +12,26 @@ export const FeatureBadge: React.FC<
 };
 
 export const ExperienceBadge: React.FC<React.ComponentProps<typeof FeatureCard>> = (props) => {
-  return <FeatureBadge classNameHighlight="highlight-experience" {...props} />;
+  return <FeatureBadge {...props} />;
 };
 
 export const ProjectsBadge: React.FC<React.ComponentProps<typeof FeatureCard>> = (props) => {
-  return <FeatureBadge classNameHighlight="highlight-projects" {...props} />;
+  return <FeatureBadge {...props} />;
 };
 
 export const SkillsBadge: React.FC<React.ComponentProps<typeof FeatureCard>> = (props) => {
-  return <FeatureBadge classNameHighlight="highlight-skills" {...props} />;
+  return <FeatureBadge {...props} />;
 };
 
 export const Achievements: React.FC<
-  React.ComponentProps<'div'> & { experiences: string; projects: string; skills: string }
-> = ({ children, ...props }) => {
+  React.ComponentProps<'div'> & {
+    experiences: React.ReactNode;
+    projects: React.ReactNode;
+    skills: React.ReactNode;
+  }
+> = ({ ref, ...props }) => {
   return (
-    <div className="flex gap-10 w-full justify-between items-space">
+    <div ref={ref} className="flex gap-10 w-full justify-between items-space">
       <ExperienceBadge number={props.experiences} desc="Years" />
       <ProjectsBadge number={props.projects} desc="Projects" />
       <SkillsBadge number={props.skills} desc="Skills" />

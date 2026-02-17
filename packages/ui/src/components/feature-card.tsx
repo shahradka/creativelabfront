@@ -7,7 +7,7 @@ export const FeatureCard = ({
   desc,
   className,
   ...restProps
-}: React.ComponentProps<'div'> & { number: string; desc: string }) => {
+}: React.ComponentProps<'div'> & { number: React.ReactNode; desc: string }) => {
   return (
     <Card className={cn('rounded feature-card', className)} {...restProps}>
       <Typography variant="5xl" weight="bold" className="number">
