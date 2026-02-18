@@ -1,9 +1,9 @@
 import { SpecialCard } from '@creativelabfront/ui/components/special-card';
 import { Typography } from '@creativelabfront/ui/components/typography';
-import appLogo from '../assets/images/companies/app-logo-circular.svg?url';
-import codetechLogo from '../assets/images/companies/codetech-logo-circular.svg?url';
-import tataLogo from '../assets/images/companies/tata-logo-circular.svg?url';
-import samanepaydarLogo from '../assets/images/companies/samanepaydar-logo.circular.svg?url';
+import appLogo from '../assets/images/companies/app-logo-circular.svg';
+import codetechLogo from '../assets/images/companies/codetech-logo-circular.svg';
+import tataLogo from '../assets/images/companies/tata-logo-circular.svg';
+import samanepaydarLogo from '../assets/images/companies/samanepaydar-logo.circular.svg';
 
 export const Timeline = () => {
   return (
