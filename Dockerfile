@@ -10,6 +10,7 @@ RUN pnpm install --frozen-lockfile
 
 RUN pnpm run build
 
+EXPOSE 3000
 EXPOSE 6006
 
-CMD ["pnpm", "dev:storybook"]
+CMD ["pnpm", "turbo", "run", "dev", "--parallel"]

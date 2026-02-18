@@ -6,6 +6,7 @@
     "build": "turbo build",
     "dev:storybook": "turbo dev --filter=storybook",
     "dev": "turbo dev --filter=web",
+    "start": "turbo dev --parallel --filter=storybook --filter=web",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
