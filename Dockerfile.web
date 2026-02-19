@@ -12,4 +12,4 @@ RUN pnpm run build:web
 
 EXPOSE 3000
 
-CMD ["pnpm", "start", "/app/packages/web"]
+CMD ["pnpm", "--filter", "web", "start"]

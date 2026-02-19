@@ -12,4 +12,4 @@ RUN pnpm run build:storybook
 
 EXPOSE 6006
 
-CMD ["pnpm", "start", "/app/packages/storybook"]
+CMD ["pnpm", "--filter", "storybook", "run" ,"preview-storybook"]
