@@ -25,13 +25,13 @@ build:
       EOF
 
     # ---- Build & Push to Docker Hub For storybook repository ----
-    - docker build -t $DOCKERHUB_USERNAME/creativelabfront-app-storybook:${CI_COMMIT_SHA:0:8} ./Dockerfile.storybook
+    - docker build -t $DOCKERHUB_USERNAME/creativelabfront-app-storybook:${CI_COMMIT_SHA:0:8} -f Dockerfile.storybook
     - docker push $DOCKERHUB_USERNAME/creativelabfront-app-storybook:${CI_COMMIT_SHA:0:8}
     - docker tag $DOCKERHUB_USERNAME/creativelabfront-app-storybook:${CI_COMMIT_SHA:0:8} $DOCKERHUB_USERNAME/creativelabfront-app-storybook:latest
     - docker push $DOCKERHUB_USERNAME/creativelabfront-app-storybook:latest
 
       # ---- Build & Push to Docker Hub For storybook repository ----
-    - docker build -t $DOCKERHUB_USERNAME/creativelabfront-app-web:${CI_COMMIT_SHA:0:8} ./Dockerfile.web
+    - docker build -t $DOCKERHUB_USERNAME/creativelabfront-app-web:${CI_COMMIT_SHA:0:8} -f Dockerfile.web
     - docker push $DOCKERHUB_USERNAME/creativelabfront-app-web:${CI_COMMIT_SHA:0:8}
     - docker tag $DOCKERHUB_USERNAME/creativelabfront-app-web:${CI_COMMIT_SHA:0:8} $DOCKERHUB_USERNAME/creativelabfront-app-web:latest
     - docker push $DOCKERHUB_USERNAME/creativelabfront-app-web:latest
