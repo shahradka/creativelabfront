@@ -436,11 +436,12 @@ export default function Page() {
               Who Am I?
             </Typography>
             <Typography className="who-am-I-text split text-center leading-8 px-20" as="div">
-              A senior software engineer with 10+ years of experience specializing in JavaScript and
-              Java. Skilled in building scalable applications, optimizing performance, and leading
-              international teams. Strong background in payment systems, web3 projects, and
-              enterprise-level applications. Experienced in NestJS, Node.js, React, Nextjs,
-              PostgreSQL, MongoDB, Docker, Kubernetes, Microservices, CI/CD.
+              Senior Software Engineer with 10+ years of experience building scalable fintech and
+              Web3 applications using React, Next.js, TypeScript, Java Spring, and NestJS.
+              Specialized in microservices architecture, secure authentication systems, which
+              include OAuth2 and RBAC, and performance optimization. Proven track record of
+              enhancing Core Web Vitals while decreasing system latency and constructing
+              high-traffic distributed systems for financial environments.
             </Typography>
           </WhoAmI>
           <Image
@@ -486,10 +487,7 @@ export default function Page() {
         </div>
       </div>
       <div
-        className={cn(
-          landingRegion,
-          'bg-background h-screen flex flex-col bg-no-repeat bg-center relative'
-        )}
+        className={cn(landingRegion, 'bg-background flex flex-col bg-no-repeat bg-center relative')}
       >
         <div className="size-full max-w-7xl flex flex-col justify-center">
           <Image
