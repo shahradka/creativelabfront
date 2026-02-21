@@ -42,7 +42,7 @@ export const HeroBase: React.FC<HeroBaseProps> = ({
               {subtitle2}
             </Typography>
           </div>
-          <Typography as="p" variant="medium" className="text-card">
+          <Typography as="p" variant="medium" className="text-white">
             {descriptions}
           </Typography>
           {children}
