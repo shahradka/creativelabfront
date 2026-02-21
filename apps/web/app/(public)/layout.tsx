@@ -17,16 +17,24 @@ export default function Layout({
         <div className="max-w-7xl w-full">
           <HeaderBase title="CreativeLab">
             <Link href="/current">
-              <Typography variant="small">Current</Typography>
+              <Typography className="text-white" variant="small">
+                Current
+              </Typography>
             </Link>
             <Link href="/current">
-              <Typography variant="small">Programming</Typography>
+              <Typography className="text-white" variant="small">
+                Programming
+              </Typography>
             </Link>
             <Link href="/current">
-              <Typography variant="small">Design</Typography>
+              <Typography className="text-white" variant="small">
+                Design
+              </Typography>
             </Link>
             <Link href="/current">
-              <Typography variant="small">My CV</Typography>
+              <Typography className="text-white" variant="small">
+                My CV
+              </Typography>
             </Link>
           </HeaderBase>
         </div>
@@ -38,13 +46,15 @@ export default function Layout({
             if (menuItem.parentId === null)
               return (
                 <div key={menuItem.id} className="flex flex-col items-center gap-1 w-40 px-6">
-                  <Typography color="muted">{menuItem.label}</Typography>
+                  <Typography className="text-muted-foreground">{menuItem.label}</Typography>
                   <div className="w-full h-1 bg-gradient-to-r from-zinc-50/10 via-neutral-500 to-zinc-50/10" />
                   <div className="flex flex-col gap-5">
                     {MenuItems.filter(
                       (menuChildItem) => menuChildItem.parentId === menuItem.id
                     ).map((child) => (
-                      <Typography key={child.id}>{child.label}</Typography>
+                      <Typography className="text-white" key={child.id}>
+                        {child.label}
+                      </Typography>
                     ))}
                   </div>
                 </div>

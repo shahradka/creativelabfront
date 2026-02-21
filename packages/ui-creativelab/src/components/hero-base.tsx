@@ -30,7 +30,7 @@ export const HeroBase: React.FC<HeroBaseProps> = ({
             <Typography variant="5xl" weight="bold" as="span" className="gradient-text">
               {title}{' '}
             </Typography>
-            <Typography variant="5xl" weight="bold" as="span">
+            <Typography variant="5xl" weight="bold" as="span" className="text-white">
               {subtitle1}{' '}
             </Typography>
             <Typography
@@ -42,7 +42,7 @@ export const HeroBase: React.FC<HeroBaseProps> = ({
               {subtitle2}
             </Typography>
           </div>
-          <Typography as="p" variant="medium" className="text-foreground">
+          <Typography as="p" variant="medium" className="text-card">
             {descriptions}
           </Typography>
           {children}

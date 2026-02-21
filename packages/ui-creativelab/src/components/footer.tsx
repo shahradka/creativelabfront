@@ -10,7 +10,7 @@ export const Footer = ({ children, ...restProps }: React.ComponentProps<'div'>) 
         <div className="basis-3/4 flex flex-col">{children}</div>
         <div className="basis-1/4 flex flex-col items-center gap-3">
           <img src={logoImg.src} alt="CreativeLab Logo" className="h-40 w-auto" />
-          <Typography>CreativeLab</Typography>
+          <Typography className="text-muted-foreground">CreativeLab</Typography>
         </div>
       </div>
       <Typography
