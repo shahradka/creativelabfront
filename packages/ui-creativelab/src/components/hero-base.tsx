@@ -1,6 +1,5 @@
 import React from 'react';
 import earlener from '../assets/images/earlener-flask.png';
-import wave from '../assets/images/hero-wave-background.svg';
 import { Typography } from '@creativelabfront/ui/components/typography';
 
 interface HeroBaseProps {

@@ -7,7 +7,7 @@ export const ExploreButton = ({
 }: React.ComponentProps<typeof Button>) => {
   return (
     <Button
-      className={cn(`gradient-button max-w-[159px] shadow-md`, className)}
+      className={cn(`gradient-button max-w-50 shadow-md`, className)}
       size="lg"
       {...restProps}
     >
@@ -24,7 +24,7 @@ export const LearnMoreButton = ({
   return (
     <Button
       className={cn(
-        `border-chart-3 max-w-[159px]  hover:bg-chart-3 hover:text-primary-foreground text-chart-3`,
+        `border-chart-3 max-w-50  hover:bg-chart-3 hover:text-primary-foreground text-chart-3`,
         className
       )}
       variant="outline"

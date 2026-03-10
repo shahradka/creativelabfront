@@ -19,6 +19,7 @@ import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim'; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 import { type ISourceOptions } from '@tsparticles/engine';
 import { Typography } from '@creativelabfront/ui/components/typography';
+import Link from 'next/link';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
@@ -309,7 +310,11 @@ export default function Page() {
             descriptions="Unlocking Tomorrow’s Intelligence"
           >
             <div className="flex flex-col gap-3 flex-start">
-              <ExploreButton> Explore Solution</ExploreButton>
+              <ExploreButton>
+                <Link href="https://www.figma.com/design/q7a5yni8xHPJA6gz3ILge9/cv-creative-lab?node-id=4641-441">
+                  View Design Of This Page
+                </Link>
+              </ExploreButton>
               <LearnMoreButton>Learn More</LearnMoreButton>
             </div>
           </HeroBase>
