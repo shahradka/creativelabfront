@@ -29,9 +29,13 @@ export const Achievements: React.FC<
     projects: React.ReactNode;
     skills: React.ReactNode;
   }
-> = ({ ref, ...props }) => {
+> = ({ ref, className, ...props }) => {
   return (
-    <div ref={ref} className="flex gap-10 w-full justify-between items-space">
+    <div
+      ref={ref}
+      className={cn('flex gap-10 w-full justify-between items-space', className)}
+      {...props}
+    >
       <ExperienceBadge number={props.experiences} desc="Years" />
       <ProjectsBadge number={props.projects} desc="Projects" />
       <SkillsBadge number={props.skills} desc="Skills" />

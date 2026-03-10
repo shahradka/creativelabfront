@@ -17,7 +17,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger, SplitText } from 'gsap/all';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim'; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-import { Opacity, type ISourceOptions } from '@tsparticles/engine';
+import { type ISourceOptions } from '@tsparticles/engine';
 import { Typography } from '@creativelabfront/ui/components/typography';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -159,108 +159,19 @@ export default function Page() {
   );
 
   const parentContainer = useRef<HTMLDivElement | null>(null);
-  const heroFlashlightRef = useRef<HTMLDivElement | null>(null);
-  const heroRef = useRef<HTMLDivElement | null>(null);
   const waveRef = useRef<HTMLDivElement | null>(null);
   const achievementParentRef = useRef<HTMLDivElement | null>(null);
-  const achievementBadgeGroupRef = useRef<HTMLDivElement | null>(null);
   const whoAmIRef = useRef<HTMLDivElement | null>(null);
-  const whoAmIPicRef = useRef<HTMLImageElement | null>(null);
+
   useLayoutEffect(() => {
     const mm = gsap.matchMedia();
-    const landingPageAnimation = gsap.timeline({ repeat: 0 });
-    let split = SplitText.create('.split', { type: 'words, chars' });
+    mm.add('(min-width: 1024px)', () => {});
+    let splittedWhoAmIText = SplitText.create('.split', { type: 'words, chars' });
 
-    landingPageAnimation
-      .to(heroFlashlightRef.current, {
-        x: -window.innerWidth / 1.6,
-        duration: 5,
-        ease: 'power2.out',
-      })
-      .to(heroFlashlightRef.current, {
-        top: 1,
-        duration: 2,
-        ease: 'power2.out',
-      })
-      .to(heroFlashlightRef.current, {
-        x: -window.innerWidth / 2,
-        duration: 0.5,
-        ease: 'power2.in',
-      })
-      .to(heroFlashlightRef.current, {
-        scale: 8,
-        duration: 2,
-        ease: 'power2.inOut',
-      })
-      .fromTo(
-        [waveRef.current],
-        { bottom: -100 },
-        {
-          bottom: 0,
-          opacity: 1,
-          scrollTrigger: {
-            trigger: heroRef.current,
-            start: 'top top',
-            end: `${window.innerHeight * 3}`,
-            pin: true,
-            scrub: true,
-            toggleActions: 'play resume reverse reset',
-            pinSpacing: true,
-          },
-        }
-      )
-      .to('.glow-highlight', { scale: 3, yoyo: true, duration: 2, repeat: -1 })
-      .to('.achievement-section', {
-        backgroundPositionY: '3%',
-        duration: 1,
-        yoyo: true,
-        repeat: -1,
-        ease: 'power2.out',
-      })
-      .from('.achievementBadge', {
-        textContent: 0,
-        duration: 4,
-        snap: { textContent: 1 },
-        stagger: 1,
-        delay: 0.5,
-      })
-      .fromTo(
-        achievementBadgeGroupRef.current,
-        { y: 400 },
-        {
-          y: 0,
-          scrollTrigger: {
-            trigger: achievementParentRef.current,
-            start: 'top top',
-            end: `+=${window.innerHeight * 3}`,
-            pin: true,
-            scrub: true,
-            markers: true,
-          },
-        }
-      )
-      .fromTo(
-        whoAmIPicRef.current,
-        { scale: 3, left: 30, top: 10 },
-        {
-          scale: 1,
-          scrollTrigger: {
-            trigger: whoAmIRef.current,
-            start: 'top top',
-            end: `+=${window.innerHeight * 3}`,
-            pin: true,
-            scrub: true,
-          },
-        }
-      )
-      .from(split.words, {
-        duration: 0.5,
-        y: 100,
-        autoAlpha: 0,
-        stagger: 0.05,
-      });
+    const featureBadgeTweens: gsap.core.Tween[] = [];
+
     gsap.utils.toArray('.achievement-shape').forEach((el) => {
-      gsap.to(el as gsap.TweenTarget, {
+      const tween = gsap.to(el as gsap.TweenTarget, {
         y: -20,
         duration: 1.5,
         repeat: -1,
@@ -268,27 +179,113 @@ export default function Page() {
         ease: 'sine.inOut',
         delay: Math.random() * 2,
       });
+      featureBadgeTweens.push(tween);
     });
 
-    gsap.to('.who-am-I-glow', {
+    const glowHighlightTween = gsap.to('.glow-highlight', {
+      scale: 3,
+      yoyo: true,
+      duration: 2,
+      repeat: -1,
+    });
+
+    featureBadgeTweens.push(glowHighlightTween);
+
+    const achievementBadgeNumberTween = gsap.from('.achievement-badge', {
+      textContent: 0,
+      duration: 4,
+      snap: { textContent: 1 },
+    });
+
+    achievementBadgeNumberTween.pause();
+
+    const whoAmIGlowTween = gsap.to('.who-am-I-glow', {
       xPercent: 200,
       yoyo: true,
       duration: 2,
       repeat: -1,
       ease: 'sine.inOut',
     });
+
+    gsap.utils.toArray('.section').forEach((section) => {
+      const sectionEl = section as HTMLElement;
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionEl,
+          start: '-10% top',
+          end: 'bottom',
+          onEnter: () =>
+            sectionEl.classList.contains('features')
+              ? featureBadgeTweens.forEach((tween) => tween.resume())
+              : sectionEl.classList.contains('who-am-I') && whoAmIGlowTween.resume(),
+          onLeave: () =>
+            sectionEl.classList.contains('features')
+              ? featureBadgeTweens.forEach((tween) => tween.pause())
+              : sectionEl.classList.contains('who-am-I') && whoAmIGlowTween.pause(),
+          onEnterBack: () =>
+            sectionEl.classList.contains('features')
+              ? featureBadgeTweens.forEach((tween) => tween.resume())
+              : sectionEl.classList.contains('who-am-I') && whoAmIGlowTween.resume(),
+          onLeaveBack: () =>
+            sectionEl.classList.contains('features')
+              ? featureBadgeTweens.forEach((tween) => tween.pause())
+              : sectionEl.classList.contains('who-am-I') && whoAmIGlowTween.pause(),
+        },
+      });
+
+      if (sectionEl.classList.contains('hero')) {
+        tl.fromTo(
+          sectionEl.querySelector('.animate-bottom-to-top'),
+          { y: 100, opacity: 0 },
+          { y: -48, opacity: 1, duration: 1 }
+        );
+      }
+
+      if (sectionEl.classList.contains('features')) {
+        tl.fromTo(
+          sectionEl.querySelectorAll('.feature-badge-group'),
+          {
+            y: 400,
+          },
+          {
+            y: -40,
+            duration: 1,
+            onComplete: () => {
+              achievementBadgeNumberTween.resume();
+            },
+          }
+        );
+      }
+
+      if (sectionEl.classList.contains('who-am-I')) {
+        tl.fromTo(
+          sectionEl.querySelectorAll('.who-am-I-Icon'),
+          { scale: 3, left: 30, top: 10 },
+          {
+            scale: 1,
+          }
+        );
+        tl.from(splittedWhoAmIText.words, { duration: 1, y: 100, autoAlpha: 0, stagger: 0.05 });
+      }
+      if (sectionEl.classList.contains('special-cards-group')) {
+        tl.fromTo(
+          sectionEl.querySelectorAll('.special-card'),
+          { y: 400 },
+          {
+            y: 0,
+            duration: 0.5,
+            stagger: 0.2,
+          }
+        );
+      }
+    });
+
     return () => mm.revert();
   }, []);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
       await loadSlim(engine);
-      //await loadBasic(engine);
     }).then(() => {
       setInit(true);
     });
@@ -297,10 +294,12 @@ export default function Page() {
   return (
     <div ref={parentContainer}>
       <div
-        ref={heroRef}
-        className={cn('flex flex-col bg-hero-background relative h-screen', landingRegion)}
+        className={cn(
+          'hero flex flex-col bg-hero-background relative h-screen section',
+          landingRegion
+        )}
       >
-        <div ref={waveRef} className="hero-wave light opacity-0" />
+        <div ref={waveRef} className="hero-wave light animate-bottom-to-top" />
         <Particles className="z-0 absolute" id="tsparticles" options={moleculesOptions} />
         <div className="size-full max-w-7xl">
           <HeroBase
@@ -315,26 +314,14 @@ export default function Page() {
             </div>
           </HeroBase>
         </div>
-        <div className="absolute inset-0 bg-gray pointer-events-none z-1">
-          <div
-            ref={heroFlashlightRef}
-            className="
-            absolute
-            w-[340px] h-[340px]
-            rounded-full
-            bg-transparent
-            shadow-[0_0_0_9999px_rgba(0,0,0,0.90)]
-            left-[calc(100vw/1.6)] top-[calc(100vh/3)]
-          "
-          />
-        </div>
       </div>
       <div
         ref={achievementParentRef}
         className={cn(
           landingRegion,
           'achievement-section',
-          'bg-background relative h-screen flex flex-col'
+          'bg-background relative h-screen flex flex-col',
+          'features'
         )}
       >
         <div className="absolute size-full flex flex-col items-center justify-center">
@@ -413,10 +400,10 @@ export default function Page() {
         <div className="glow-highlight bg-sky-300 size-20 rounded-full blur-3xl absolute right-100 top-[30%]" />
         <div className="size-full max-w-7xl flex flex-col justify-center">
           <Achievements
-            ref={achievementBadgeGroupRef}
-            experiences={<span className="achievementBadge">14+</span>}
-            projects={<span className="achievementBadge">50+</span>}
-            skills={<span className="achievementBadge">30+</span>}
+            className={cn('animate-bottom-to-top', 'feature-badge-group')}
+            experiences={<span className="achievement-badge">14+</span>}
+            projects={<span className="achievement-badge">50+</span>}
+            skills={<span className="achievement-badge">30+</span>}
           />
         </div>
       </div>
@@ -424,7 +411,8 @@ export default function Page() {
         ref={whoAmIRef}
         className={cn(
           landingRegion,
-          'bg-background h-screen flex flex-col bg-no-repeat bg-center relative'
+          'bg-background h-screen flex flex-col bg-no-repeat bg-center relative',
+          'who-am-I'
         )}
       >
         <div className="who-am-I-glow bg-violet-600 size-40 rounded-full blur-[128px] absolute left-0 top-[50%]" />
@@ -445,7 +433,7 @@ export default function Page() {
             </Typography>
           </WhoAmI>
           <Image
-            ref={whoAmIPicRef}
+            className="who-am-I-Icon"
             src="/images/chemistry-table.svg"
             width={160}
             height={160}
@@ -476,7 +464,7 @@ export default function Page() {
         />
         <div className="bg-pink-600 size-20 rounded-full blur-[100px] absolute right-[20%] top-[50%]" />
         <Image
-          className="absolute -left-4 z-0"
+          className="absolute -left-4 z-0 fade-border"
           src="/images/earlener-flask-cartoons-big.svg"
           alt=""
           width={540}
@@ -487,7 +475,11 @@ export default function Page() {
         </div>
       </div>
       <div
-        className={cn(landingRegion, 'bg-background flex flex-col bg-no-repeat bg-center relative')}
+        className={cn(
+          landingRegion,
+          'bg-background flex flex-col bg-no-repeat bg-center relative',
+          'special-cards-group'
+        )}
       >
         <div className="size-full max-w-7xl flex flex-col justify-center">
           <Image
@@ -504,7 +496,7 @@ export default function Page() {
             width={200}
             height={100}
           />
-          <Timeline />
+          <Timeline cardClassName="special-card" />
         </div>
       </div>
     </div>

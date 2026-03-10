@@ -1,5 +1,5 @@
 import { cn } from '../lib/utils';
-import { Card, CardContent } from './card';
+import { Card, CardContent, CardHeader } from './card';
 import { Typography } from './typography';
 
 export const SpecialCard = ({
@@ -18,9 +18,9 @@ export const SpecialCard = ({
   subTitle?: string;
 }) => {
   return (
-    <Card className="pt-0 overflow-hidden shadow-lg bg-card">
+    <Card className={cn('pt-0 overflow-hidden shadow-lg bg-card', props.className)}>
       <div className={cn('h-2 top-0', gradientClassName)} />
-      <CardContent className="flex gap-5 flex-col" {...props}>
+      <CardHeader className="border-b-2 border-muted">
         <div className="flex gap-2 items-center">
           <div className="size-20">{logo}</div>
           <div className="flex flex-col gap-2">
@@ -30,7 +30,9 @@ export const SpecialCard = ({
             <Typography variant="small">{subTitle}</Typography>
           </div>
         </div>
-        {children}
+      </CardHeader>
+      <CardContent className="flex gap-5 flex-col" {...props}>
+        <div className="px-5">{children}</div>
       </CardContent>
     </Card>
   );

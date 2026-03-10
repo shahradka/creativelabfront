@@ -52,7 +52,7 @@
   }
 
   .feature-badge {
-    @apply relative z-1 w-37 h-13;
+    @apply relative z-1 w-37;
   }
 
   .feature-badge.highlight-experience::after {

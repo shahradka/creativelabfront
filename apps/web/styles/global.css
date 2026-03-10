@@ -17,3 +17,9 @@
 .dark .hero-wave {
   @apply bg-[url('/images/hero-wave-dark-background.svg')];
 }
+
+.fade-border {
+  width: 400px;
+  mask-image: linear-gradient(black 80%, transparent);
+  -webkit-mask-image: linear-gradient(black 80%, transparent);
+}
